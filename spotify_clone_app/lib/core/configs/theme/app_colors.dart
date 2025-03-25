@@ -7,4 +7,5 @@ class AppColors {
   static const grey = Color(0xFFBEBEBE);
   static const darkGrey = Color(0xFF343434);
   static const hintTextColor = Color(0xFFA0A0A0);
+  static const signinColor = Color(0xFFD7D7D7);
 }
