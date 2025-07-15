@@ -94,7 +94,7 @@ class Register extends StatelessWidget {
             height: 20,
           ),
           //Google ve Apple butonları
-          googleappleButtons(),
+          googleappleButtons(context),
           const SizedBox(
             height: 30,
           ),
@@ -142,15 +142,22 @@ class Register extends StatelessWidget {
   Widget _passwordField(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 28.0),
-      child: TextField(
+      child: TextFormField(
         decoration: const InputDecoration(
           hintText: "Password",
+          suffixIcon: Padding(
+            padding: EdgeInsets.only(right: 28.0),
+            child: Icon(
+              Icons.visibility_off,
+              size: 25,
+            ),
+          ),
         ).applyDefaults(Theme.of(context).inputDecorationTheme),
       ),
     );
   }
 
-  Widget googleappleButtons() {
+  Widget googleappleButtons(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -172,7 +179,9 @@ class Register extends StatelessWidget {
             // Apple ile giriş işlemi
           },
           child: SvgPicture.asset(
-            'assets/vectors/apple_logo.svg', // Vektör dosya yolunu güncelle
+            context.isDarkMode
+                ? "assets/vectors/apple_logo_white.svg"
+                : "assets/vectors/apple_logo.svg", // Vektör dosya yolunu güncelle
             width: 40,
             height: 40,
           ),
