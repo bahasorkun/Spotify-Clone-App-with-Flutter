@@ -94,7 +94,12 @@ class Register extends StatelessWidget {
             height: 20,
           ),
           //Google ve Apple butonları
-          Row()
+          googleappleButtons(),
+          const SizedBox(
+            height: 30,
+          ),
+          //Kayıtlı mısınız? metni ve Giriş Yap linki
+          _signText(context),
         ],
       ),
     );
@@ -142,6 +147,62 @@ class Register extends StatelessWidget {
           hintText: "Password",
         ).applyDefaults(Theme.of(context).inputDecorationTheme),
       ),
+    );
+  }
+
+  Widget googleappleButtons() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        // Google ikonunu ekle
+        GestureDetector(
+          onTap: () {
+            // Google ile giriş işlemi
+          },
+          child: SvgPicture.asset(
+            'assets/vectors/google_logo.svg', // Vektör dosya yolunu güncelle
+            width: 40,
+            height: 40,
+          ),
+        ),
+        const SizedBox(width: 100),
+        // Apple ikonunu ekle
+        GestureDetector(
+          onTap: () {
+            // Apple ile giriş işlemi
+          },
+          child: SvgPicture.asset(
+            'assets/vectors/apple_logo.svg', // Vektör dosya yolunu güncelle
+            width: 40,
+            height: 40,
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _signText(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        const Text(
+          "Do you have an account? ",
+          style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+        ),
+        GestureDetector(
+          onTap: () {
+            // Giriş yapma işlemi
+          },
+          child: const Text(
+            "Sign In",
+            style: TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.bold,
+              color: AppColors.primary,
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
