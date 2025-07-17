@@ -1,60 +1,60 @@
-# Copilot Instructions for spotify_clone_app
+# spotify_clone_app için Copilot Talimatları
 
-## Project Overview
+## Proje Genel Bakış
 
-- This is a Flutter-based Spotify clone app, structured for cross-platform (iOS, Android, Web, Desktop) development.
-- Main app code is under `lib/`, with `presentation/` for UI, `core/` for configs, and `common/` for shared helpers/widgets.
-- Asset management is centralized in `assets/` (fonts, images, vectors).
+- Bu proje, Flutter tabanlı bir Spotify klon uygulamasıdır ve çoklu platform (iOS, Android, Web, Masaüstü) desteğiyle yapılandırılmıştır.
+- Ana uygulama kodları `lib/` klasöründedir. `presentation/` arayüz, `core/` yapılandırmalar, `common/` ise ortak yardımcılar ve widget'lar içindir.
+- Varlık (asset) yönetimi `assets/` klasöründe (fontlar, görseller, vektörler) merkezileştirilmiştir.
 
-## Key Architectural Patterns
+## Temel Mimarî Desenler
 
-- **UI Layer:** All screens/pages are in `lib/presentation/`, grouped by feature (e.g., `auth/pages/`).
-- **Widgets:** Reusable widgets are in `lib/common/widgets/`.
-- **Theme & Assets:** Colors, vectors, and theme configs are in `lib/core/configs/`.
-- **Helpers:** Utility functions (e.g., dark mode detection) are in `lib/common/helpers/`.
-- **Navigation:** Uses Flutter's `Navigator` for page transitions (see `onTap` handlers in UI code).
+- **Arayüz Katmanı:** Tüm ekranlar/sayfalar `lib/presentation/` altında, özelliğe göre gruplanmıştır (örn. `auth/pages/`).
+- **Widget'lar:** Tekrar kullanılabilir widget'lar `lib/common/widgets/` dizinindedir.
+- **Tema & Varlıklar:** Renkler, vektörler ve tema ayarları `lib/core/configs/` altındadır.
+- **Yardımcılar:** Yardımcı fonksiyonlar (örn. karanlık mod tespiti) `lib/common/helpers/` dizinindedir.
+- **Navigasyon:** Sayfa geçişleri için Flutter'ın `Navigator` yapısı kullanılır (UI kodundaki `onTap` örneklerine bakınız).
 
-## Developer Workflows
+## Geliştirici İş Akışları
 
-- **Build:**
-  - Standard Flutter build commands apply: `flutter run`, `flutter build <platform>`.
-  - For iOS: Run `pod install` in `ios/` if dependencies change.
+- **Derleme:**
+  - Standart Flutter komutları geçerlidir: `flutter run`, `flutter build <platform>`
+  - iOS için: Bağımlılıklar değişirse `ios/` klasöründe `pod install` çalıştırın.
 - **Test:**
-  - Widget tests are in `test/`. Run with `flutter test`.
-- **Assets:**
-  - Add new assets to `assets/` and update `pubspec.yaml` accordingly.
+  - Widget testleri `test/` klasöründedir. `flutter test` ile çalıştırılır.
+- **Varlıklar:**
+  - Yeni varlık eklerken `assets/` klasörüne ekleyin ve `pubspec.yaml` dosyasını güncelleyin.
 - **Hot Reload:**
-  - Use `flutter run` and save files for hot reload during development.
+  - Geliştirme sırasında `flutter run` ile çalıştırıp dosyayı kaydederek hot reload kullanın.
 
-## Project-Specific Conventions
+## Projeye Özel Kurallar
 
-- **File Naming:** Use snake_case for files and directories.
-- **Widget Structure:** Stateless widgets are preferred unless state is required.
-- **Theming:** Always use `AppColors` and `Theme.of(context)` for colors/styles.
-- **SVGs:** Use `flutter_svg` for vector assets (see `SvgPicture.asset`).
-- **Dark Mode:** Use `context.isDarkMode` (from custom helper) for theme logic.
-- **Navigation:** Use `MaterialPageRoute` for navigation between pages.
+- **Dosya İsimlendirme:** Dosya ve klasörlerde snake_case kullanın.
+- **Widget Yapısı:** State gerekmiyorsa StatelessWidget tercih edin.
+- **Tema:** Renk ve stil için daima `AppColors` ve `Theme.of(context)` kullanın.
+- **SVG:** Vektör varlıklar için `flutter_svg` kullanın (`SvgPicture.asset` örneğine bakınız).
+- **Karanlık Mod:** Tema mantığı için özel yardımcıdan `context.isDarkMode` kullanın.
+- **Navigasyon:** Sayfa geçişlerinde `MaterialPageRoute` kullanın.
 
-## Integration Points
+## Entegrasyon Noktaları
 
-- **External Packages:**
-  - `flutter_svg` for SVG rendering
-  - Custom fonts (Satoshi) in `assets/fonts/`
-- **Platform Integration:**
-  - iOS/Android configs in `ios/` and `android/` folders
+- **Harici Paketler:**
+  - SVG gösterimi için `flutter_svg`
+  - Özel fontlar (Satoshi) `assets/fonts/` altında
+- **Platform Entegrasyonu:**
+  - iOS/Android ayarları `ios/` ve `android/` klasörlerinde
 
-## Examples
+## Örnekler
 
-- To add a new page: create a Dart file in `lib/presentation/<feature>/pages/`, define a `StatelessWidget`, and add navigation via `Navigator.push`.
-- To add a new asset: place it in `assets/`, then declare it in `pubspec.yaml` under `assets:`.
+- Yeni bir sayfa eklemek için: `lib/presentation/<feature>/pages/` altında bir Dart dosyası oluşturun, bir `StatelessWidget` tanımlayın ve `Navigator.push` ile yönlendirme ekleyin.
+- Yeni bir varlık eklemek için: Dosyayı `assets/` klasörüne koyun, ardından `pubspec.yaml` dosyasında `assets:` altında tanımlayın.
 
-## References
+## Referanslar
 
-- Main entry: `lib/main.dart`
-- Example UI: `lib/presentation/auth/pages/register.dart`
-- Theme: `lib/core/configs/theme/app_colors.dart`
-- Vectors: `lib/core/configs/assets/app_vectors.dart`
+- Ana giriş: `lib/main.dart`
+- Örnek arayüz: `lib/presentation/auth/pages/register.dart`
+- Tema: `lib/core/configs/theme/app_colors.dart`
+- Vektörler: `lib/core/configs/assets/app_vectors.dart`
 
 ---
 
-Update this file if you introduce new architectural patterns, workflows, or conventions.
+Yeni mimarî desenler, iş akışları veya kurallar eklerseniz bu dosyayı güncelleyiniz.
