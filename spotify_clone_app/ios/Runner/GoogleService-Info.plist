@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyA6da0-H5rc4ezUK_OE57hWG-EyRl4hPBU</string>
+	<key>GCM_SENDER_ID</key>
+	<string>237673886304</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.spotifyCloneApp</string>
+	<key>PROJECT_ID</key>
+	<string>spotify-clone-b6dc9</string>
+	<key>STORAGE_BUCKET</key>
+	<string>spotify-clone-b6dc9.firebasestorage.app</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:237673886304:ios:0b0517effb170e801fc905</string>
+</dict>
+</plist>
