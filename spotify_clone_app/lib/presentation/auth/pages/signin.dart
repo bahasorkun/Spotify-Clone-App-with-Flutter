@@ -6,11 +6,11 @@ import 'package:spotify_clone_app/common/widgets/appbar/app_bar.dart';
 import 'package:spotify_clone_app/common/widgets/button/basic_app_button.dart';
 import 'package:spotify_clone_app/core/configs/assets/app_vectors.dart';
 import 'package:spotify_clone_app/core/configs/theme/app_colors.dart';
-import 'package:spotify_clone_app/presentation/auth/pages/signin.dart';
+import 'package:spotify_clone_app/presentation/auth/pages/register.dart';
 import 'package:spotify_clone_app/presentation/auth/pages/support_page.dart';
 
-class Register extends StatelessWidget {
-  const Register({super.key});
+class SignIn extends StatelessWidget {
+  const SignIn({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,15 +26,15 @@ class Register extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           SizedBox(height: 25),
-          _registerText(),
+          _signInText(),
           const SizedBox(
-            height: 15,
+            height: 25,
           ),
           Text.rich(
             TextSpan(
               text: "If You Need Any Support  ",
               style: TextStyle(
-                fontSize: 17,
+                fontSize: 13,
                 fontWeight: FontWeight.w500,
                 color:
                     context.isDarkMode ? AppColors.signinColor : Colors.black,
@@ -43,7 +43,7 @@ class Register extends StatelessWidget {
                 TextSpan(
                   text: "Click Here",
                   style: const TextStyle(
-                      fontSize: 17,
+                      fontSize: 13,
                       fontWeight: FontWeight.w500,
                       color: AppColors.primary),
                   recognizer: TapGestureRecognizer()
@@ -62,10 +62,6 @@ class Register extends StatelessWidget {
           const SizedBox(
             height: 20,
           ),
-          _fullNameField(context),
-          const SizedBox(
-            height: 20,
-          ),
           _enterEmailField(context),
           const SizedBox(
             height: 20,
@@ -74,10 +70,7 @@ class Register extends StatelessWidget {
           const SizedBox(
             height: 20,
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 29.0),
-            child: BasicAppButton(onPressed: () {}, title: "Create Account"),
-          ),
+          _signInButton(),
           const SizedBox(
             height: 20,
           ),
@@ -98,18 +91,18 @@ class Register extends StatelessWidget {
           //Google ve Apple butonları
           googleappleButtons(context),
           const SizedBox(
-            height: 30,
+            height: 60,
           ),
           //Kayıtlı mısınız? metni ve Giriş Yap linki
-          _signText(context),
+          _registerText(context),
         ],
       ),
     );
   }
 
-  Widget _registerText() {
+  Widget _signInText() {
     return const Text(
-      "Register",
+      "Sign In",
       style: TextStyle(
         fontSize: 30,
         fontWeight: FontWeight.bold,
@@ -119,23 +112,12 @@ class Register extends StatelessWidget {
     );
   }
 
-  Widget _fullNameField(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 28.0),
-      child: TextField(
-        decoration: const InputDecoration(
-          hintText: "Full Name",
-        ).applyDefaults(Theme.of(context).inputDecorationTheme),
-      ),
-    );
-  }
-
   Widget _enterEmailField(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 28.0),
       child: TextField(
         decoration: const InputDecoration(
-          hintText: "Enter E-mail",
+          hintText: "Enter Username or E-mail",
         ).applyDefaults(Theme.of(context).inputDecorationTheme),
       ),
     );
@@ -192,26 +174,26 @@ class Register extends StatelessWidget {
     );
   }
 
-  Widget _signText(BuildContext context) {
+  Widget _registerText(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         const Text(
-          "Do you have an account? ",
+          "Not a Member? ",
           style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
         ),
         GestureDetector(
           onTap: () {
-            // Giriş yapma işlemi
+            // Kayıt olma işlemi
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => const SignIn(),
+                builder: (context) => const Register(),
               ),
             );
           },
           child: const Text(
-            "Sign In",
+            "Register Now",
             style: TextStyle(
               fontSize: 16,
               fontWeight: FontWeight.bold,
@@ -220,6 +202,13 @@ class Register extends StatelessWidget {
           ),
         ),
       ],
+    );
+  }
+
+  Widget _signInButton() {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 29.0),
+      child: BasicAppButton(onPressed: () {}, title: "Sign In"),
     );
   }
 }
